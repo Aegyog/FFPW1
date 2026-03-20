@@ -4,7 +4,7 @@ Course: 6INTELSY Final Project
 Authors: Justin Errol L. Priniel & Jaycen John C. Carreon
 
 Overview
-This project is an intelligent news recommendation system[cite: 10]. It ranks items by capturing semantic features from text and adapting to shifting user preferences[cite: 10, 12]. It combines NLP embeddings, a 1D Text CNN for feature extraction, and a Contextual Bandit reinforcement learning agent[cite: 12, 16].
+This project is an intelligent news recommendation system. It ranks items by capturing semantic features from text and adapting to shifting user preferences. It combines NLP embeddings, a 1D Text CNN for feature extraction, and a Contextual Bandit reinforcement learning agent.
 
 v0.9 Progress (Week 2 Checkpoint)
 * Data acquired and cleaned with splits finalized.
@@ -13,10 +13,10 @@ v0.9 Progress (Week 2 Checkpoint)
 * RL agent is stubbed with reward design and early learning curves.
 
 Dataset and Ethics
-We use the Microsoft News Dataset (MIND)[cite: 33]. The data consists of anonymized behavior logs with all personal information removed[cite: 38]. We use exploration strategies to mitigate filter bubbles[cite: 60].
+We use the Microsoft News Dataset (MIND). The data consists of anonymized behavior logs with all personal information removed. We use exploration strategies to mitigate filter bubbles.
 
 Quick Start
-1. Install dependencies: pip install -r requirements.txt
-2. Open EDA: notebooks/EDA_MIND_Dataset.ipynb
-3. Run Simulator: python src/evaluation/simulator.py
-EOF
+1. Clone the repo: git clone https://github.com/Aegyog/6intelsy-final-project.git
+2. Install dependencies: pip install -r requirements.txt
+3. Open EDA: notebooks/EDA_MIND_Dataset.ipynb
+4. Run Simulator: python src/evaluation/simulator.py
