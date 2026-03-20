@@ -5,10 +5,10 @@ import torch.nn.functional as F
 class TextCNN(nn.Module):
     def __init__(self, vocab_size, embed_dim, n_filters, filter_sizes):
         super(TextCNN, self).__init__()
-        # NLP Component: Using dense embeddings for word representation [cite: 47, 48]
+        # NLP Component: Using dense embeddings for word representation
         self.embedding = nn.Embedding(vocab_size, embed_dim)
         
-        # CNN Component: Parallel filters for local n-gram extraction [cite: 49, 50]
+        # CNN Component: Parallel filters for local n-gram extraction
         self.convs = nn.ModuleList([
             nn.Conv1d(in_channels=embed_dim, 
                       out_channels=n_filters, 
@@ -25,6 +25,6 @@ class TextCNN(nn.Module):
         conved = [F.relu(conv(embedded)) for conv in self.convs]
         pooled = [F.max_pool1d(conv, conv.shape[2]).squeeze(2) for conv in conved]
         
-        # Concatenate features to form the final content vector [cite: 51]
+        # Concatenate features to form the final content vector
         cat = torch.cat(pooled, dim=1)
         return self.fc(cat)
